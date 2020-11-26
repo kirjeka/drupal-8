@@ -1,0 +1,41 @@
+name: Kvinta Radix
+description: A theme based on Radix.
+screenshot: screenshot.png
+core: 8.x
+version: '8.x-1.0'
+engine: twig
+type: theme
+base theme: radix
+
+regions:
+  top: Top
+  navbar_branding: Navbar branding
+  navbar_left:  Navbar left
+  navbar_right: Navbar right
+  header: Header
+  content: Content
+  left_col: Left column
+  footer: Footer
+
+
+libraries:
+  - radix/style
+  - kvinta_radix/style
+  - kvinta_radix/slick
+
+
+libraries-override:
+  radix/bootstrap: false
+
+ckeditor_stylesheets:
+  - assets/css/kvinta_radix.style.css
+
+component-libraries:
+  bbright_radix:
+    paths:
+      - ./src/components
+
+# Information added by Drupal.org packaging script on 2020-01-26
+# version: '8.x-4.7'
+# project: 'radix'
+# datestamp: 1580057585

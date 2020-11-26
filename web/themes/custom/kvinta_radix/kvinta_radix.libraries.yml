@@ -1,0 +1,29 @@
+style:
+  version: VERSION 1.0
+  css:
+    theme:
+      assets/css/kvinta_radix.style.css: {}
+  js:
+    assets/js/kvinta_radix.script.js: {}
+    assets/js/google_maps.js: {}
+    https://maps.googleapis.com/maps/api/js?key=AIzaSyDtfCAyokJnL5dF-EZzFq0Qsng4l-I8Zlg: { type: external, attributes: { async: true } }
+  dependencies:
+    - core/jquery
+    - core/drupal.ajax
+    - core/drupal
+    - core/drupalSettings
+    - core/jquery.once
+
+
+   
+
+slick:
+  version: VERSION 1.0
+  css:
+    theme:
+      assets/libraries/slick/slick.css: {}
+      assets/libraries/slick/slick-theme.css: {}
+  js:
+    assets/libraries/slick.min.js: {}
+    assets/js/custom.js: {}
+    

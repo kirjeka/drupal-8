@@ -1,0 +1,86 @@
+<?php
+/**
+ * @file
+ * Theme functions
+ */
+
+use Drupal\taxonomy\Entity\Term;
+
+// Include all files from the includes directory.
+$includes_path = dirname(__FILE__) . '/includes/*.inc';
+foreach (glob($includes_path) as $filename) {
+  require_once dirname(__FILE__) . '/includes/' . basename($filename);
+}
+
+function kvinta_radix_preprocess_html(&$variables) {
+
+
+    $current_path = \Drupal::service('path.current')->getPath();
+    $path_args = explode('/', $current_path);
+    if($path_args[1] == 'taxonomy' and $path_args[2] == 'term' and is_numeric($path_args[3])) {
+        $variables['attributes']['class'][] = 'taxonomy-term-' . $path_args[3];
+    }
+
+    $req_uri_array1 = explode('?', $_SERVER['REQUEST_URI']);
+    $req_uri_array2 = explode('/', $req_uri_array1[0]);
+    foreach ($req_uri_array2 as $arg) {
+        if ( !empty($arg) ) {
+            $variables['attributes']['class'][] = 'path-arg-' . $arg;
+        }
+    }
+
+    if ($node = \Drupal::request()->attributes->get('node')) {
+        $variables['attributes']['class'][] = 'page-node-' . $node->id();
+        $variables['attributes']['class'][] = 'page-' . $node->bundle();
+    }
+
+    if ($variables['is_admin']) {
+        $variables['attributes']['class'][] = 'is-admin';
+    }
+
+    $logged_in_class = ($variables['logged_in']) ? 'logged-in' : 'not-logged-in';
+    $variables['attributes']['class'][] = $logged_in_class;
+
+    $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+    if ( !empty($language) ) {
+        $variables['attributes']['class'][] = 'lang-' . $language;
+    }
+
+    $is_frontpage = \Drupal::service('path.matcher')->isFrontPage();
+    $frontpage_class = ($is_frontpage) ? 'is-frontpage' : 'not-frontpage';
+    $variables['attributes']['class'][] = $frontpage_class;
+
+    // add to this array machine names of needed regions to show corresponding CSS classes in <body> tag
+    $regions = array(
+        'slide_show',
+        'right_col',
+        'fotogallery',
+    );
+    foreach ($regions as $region) {
+        if ($variables['page'][$region]) {
+            $variables['attributes']['class'][] = 'has-region-' . $region;
+        }
+    }
+
+}
+
+/**
+ * Replace Views title with Taxonomy term name
+ * @param $view
+ */
+function kvinta_radix_views_pre_render(&$view) {
+    if ($view->id() == 'kanaty_view_contextual' && $view->current_display == 'page_1') {
+        $tid = $view->args[0];
+        $view->setTitle(Term::load($tid)->label());
+    }
+}
+
+
+
+//function bbright_radix_preprocess_page(&$variables) {
+//    //if($variables['is_front']){
+//        $variables['#attached']['library'][] = 'bbright_radix/style';
+//        $attachments['#attached']['library'][] = 'my_theme/my_javascript';
+//        \Drupal::service('renderer')->renderRoot($libraries);
+//    //}
+//}

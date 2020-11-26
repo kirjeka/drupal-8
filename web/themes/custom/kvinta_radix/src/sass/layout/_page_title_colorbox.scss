@@ -1,0 +1,228 @@
+//
+//
+//#colorbox, #cboxOverlay, #cboxWrapper{
+//  overflow: unset !important;
+//  position:absolute; top:0; left:0; z-index:9999;
+//  //    -webkit-transform: translate3d(0,0,0);
+//    }
+//// #cboxWrapper {max-width:none;}
+//#cboxOverlay{position:fixed; width:100%; height:100%;}
+//// #cboxMiddleLeft, #cboxBottomLeft{clear:left;}
+//#cboxContent{position:relative;}
+//// #cboxLoadedContent{overflow:auto; -webkit-overflow-scrolling: touch;}
+//#cboxTitle{margin:0;}
+//#cboxLoadingOverlay, #cboxLoadingGraphic{position:absolute; top:0; left:0; width:100%; height:100%;}
+//
+//#cboxOverlay {
+//    background: rgba(0,0,0,0.7);
+//}
+//
+//
+//#cboxLoadedContent {
+//     //overflow: unset !important;
+//    border-radius: 11px;
+//
+//    position: relative;
+//    // height: 425px;
+//    background: white;
+//
+//
+//
+//    box-shadow: 0 0 0 3px white;
+//}
+//
+//
+//#cboxContent {
+//    box-shadow: 0 0 0 9px $colorY;
+//    border-radius: 9px;
+//}
+//
+//#cboxWrapper {
+//    //box-shadow: 0 0 0 24px rgba(0,0,0,0.42);
+//    //bo shadow fix?
+//    border-radius: 11px;
+//}
+//
+//.cboxPhoto {
+//    width: 100%;
+//    border-radius: 9px 9px 0 0 ;
+//
+//
+//    box-shadow:inset  0px 0px 20px 0px rgb(0, 0, 0,1);
+//}
+//
+//// buttons
+//
+//#cboxCurrent {
+//    // position: absolute;
+//    // top: 89%;
+//    // right: 3%;
+//    position: absolute;
+//    bottom: 8px;
+//    right: 3%;
+//
+//    font-family: "Roboto_slab";
+//    font-size: 15px;
+//
+//    color: #5e5d5d;
+//
+//
+//}
+//
+//#cboxTitle {
+//
+//    // position: absolute;
+//    // top: 89%;
+//    // left: 2%;
+//    // width: 80%;
+//
+//    font-family: "Roboto_slab";
+//    font-size: 15px;
+//    line-height: 2.5;
+//
+//    background: white;
+//    bottom: 0;
+//    box-sizing: border-box;
+//    color: black;
+//    display: inline-block!important;
+//    height: 40px!important;
+//    left: 0!important;
+//    position: absolute;
+//    width: 100%;
+//    padding: 0 6px 4px!important;
+//    overflow: hidden;
+//
+//    border-radius: 0 0 5px 5px;
+//    box-shadow: 0 0 1px 2px white;
+//}
+//
+//#cboxPrevious {
+//
+//    outline: none;
+//    position: fixed;
+//    top: 42%;
+//    left:0px;
+//    z-index: 9999999;
+//
+//    font-size: 0;
+//    width: 75px;
+//    height: 77px;
+//
+//    border: none;
+//    background: none;
+//
+//
+//    background-image: url("../../../kvinta_radix/default_images/colorbox_icons/next-arrow\ hover\ .png");
+//    background-repeat: no-repeat;
+//
+//    background-position: -20px -452px;
+//    cursor: pointer;
+//
+//
+//
+//    &:hover {
+//
+//        display: block;
+//
+//
+//        width: 75px;
+//        height: 77px;
+//
+//        z-index: 99999;
+//
+//        background-image: url("../../../kvinta_radix/default_images/colorbox_icons/next-arrow\ hover\ .png");
+//        background-repeat: no-repeat;
+//
+//        background-position: -19px -356px;
+//        cursor: pointer;
+//        }
+//
+//
+//
+//
+//
+//
+//}
+//#cboxNext {
+//
+//    outline: none;
+//    position: fixed;
+//    top: 42%;
+//    right:-18px;
+//    z-index: 10000;
+//
+//    font-size: 0;
+//    width: 75px;
+//    height: 77px;
+//
+//    border: none;
+//    background: none;
+//
+//
+//    background-image: url("../../../kvinta_radix/default_images/colorbox_icons/next-arrow\ hover\ .png");
+//    background-repeat: no-repeat;
+//
+//    background-position: -21px -169px;
+//    cursor: pointer;
+//
+//    &:hover {
+//
+//        display: block;
+//
+//
+//        width: 75px;
+//        height: 77px;
+//
+//        z-index: 99999;
+//
+//        background-image: url("../../../kvinta_radix/default_images/colorbox_icons/next-arrow\ hover\ .png");
+//        background-repeat: no-repeat;
+//
+//        background-position: -19px -265px;
+//        cursor: pointer;
+//        }
+//
+//
+//}
+//#cboxClose {
+//
+//    outline: none;
+//    position: fixed;
+//    top: 3%;
+//    right:0;
+//    z-index:9999999990;
+//
+//    font-size: 0;
+//    width: 75px;
+//    height: 75px;
+//
+//    border: none;
+//    background: none;
+//
+//
+//    background-image: url("../../../kvinta_radix/default_images/colorbox_icons/next-arrow\ hover\ .png");
+//    background-repeat: no-repeat;
+//
+//    background-position: -12px -91px;
+//    cursor: pointer;
+//
+//    &:hover {
+//
+//        display: block;
+//
+//
+//        width: 75px;
+//        height: 75px;
+//
+//        z-index: 99999;
+//
+//        background-image: url("../../../kvinta_radix/default_images/colorbox_icons/next-arrow\ hover\ .png");
+//        background-repeat: no-repeat;
+//
+//        background-position: -12px -10px;
+//        cursor: pointer;
+//        }
+//}
+//
+//
+//

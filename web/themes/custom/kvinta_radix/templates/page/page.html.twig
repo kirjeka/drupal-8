@@ -1,0 +1,125 @@
+{#
+/**
+ * @file
+ * Template for the main page.
+ */
+#}
+
+<div class="navbar">
+
+  {% block top %}
+    {% if page.top %}
+        <div id="top">
+            {{ page.top }}
+        </div>
+    {% endif %}
+  {% endblock %}
+
+
+
+  </div>
+
+  {% if page.header %}
+    <header class="page__header">
+      <div class="page_wrapper">
+        {{ page.header }}
+      </div>
+    </header>
+  {% endif %}
+
+
+
+<main id="main">
+
+  <div id="left_bar">
+    <div class="left_bar_wrapper">
+
+     {% embed '@radix/navbar/navbar.twig' with {
+        container: 'fixed',
+        color: 'light',
+      } %}
+
+        {% block branding %}
+          {% if page.navbar_branding %}
+            {{ page.navbar_branding }}
+          {% endif %}
+        {% endblock %}
+
+
+
+        {% block left %}
+          {% if page.navbar_left %}
+            <div class="mr-auto">
+              {{ page.navbar_left }}
+            </div>
+          {% endif %}
+        {% endblock %}
+
+        {% block right %}
+          {% if page.navbar_right %}
+            {{ page.navbar_right }}
+          {% endif %}
+        {% endblock %}
+      {% endembed %}
+
+
+     {% if page.left_col %}
+        {{ page.left_col }}
+     {% endif %}
+    </div>
+  </div>
+
+   <div id="content_main">
+     <div class="content_wrapper">
+         {% if page.content %}
+           {{ page.content }}
+         {% endif %}
+     </div>
+   </div>
+
+</main>
+
+
+
+ <footer id="footer_wrapper">
+
+     {% if page.footer %}
+         <div class="page__footer_wrapper">
+            <div class="page__footer">
+                {{ page.footer }}
+            </div>
+         </div>
+     {% endif %}
+
+ </footer>
+
+
+
+
+
+ <div id="burger_menu">
+   <button>Menu</button>
+   <div class="line_hover"></div>
+ </div>
+
+
+ <div id="map_site">
+   <div class="map_wrapper">
+     <div class="links_map">
+       <ul>
+         <li><a href="#">First1</a></li>
+         <li><a href="#">Sec2</a></li>
+         <li><a href="#">thr3</a></li>
+         <li><a href="#">uy4</a></li>
+       </ul>
+     </div>
+   </div>
+ </div>
+
+<div id="markup1">House1</div>
+<div id="markup2">House2</div>
+<div id="markup3">House3</div>
+
+<div id="test"></div>
+
+

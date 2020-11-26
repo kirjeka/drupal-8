@@ -1,0 +1,16 @@
+# Ignore SASS files
+/.sass-cache
+.DS_Store
+*.codekit
+.idea
+node_modules
+
+# Generated files
+assets/mix-manifest.json
+assets/css/bbright_radix.style.css
+assets/js
+assets/js/*
+assets/css
+assets/css/*
+
+package-lock.json
